@@ -1,0 +1,16 @@
+package-lock.json
+  h_83bc5aaa251b9b 3,9
+package.json
+  h_83bc5aaa251b9b 3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "085d464dcafc9588bfc243a0ae671942bbca598f",
+  "prompts": {},
+  "humans": {
+    "h_83bc5aaa251b9b": {
+      "author": "Evan Taylor <eltaylor1104@gmail.com>"
+    }
+  }
+}
