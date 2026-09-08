@@ -1,0 +1,19 @@
+.github/workflows/publish.yml
+  s_ff22162518192d::t_3ca6e19d055a9b 1-40
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "c451cfa4b3a5919c0817cee54673ef051671afe3",
+  "prompts": {},
+  "sessions": {
+    "s_ff22162518192d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a07ead-2003-78a3-84d3-d815490cc0b0",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Evan Taylor <eltaylor1104@gmail.com>"
+    }
+  }
+}
