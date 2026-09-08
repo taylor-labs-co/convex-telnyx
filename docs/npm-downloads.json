@@ -1,0 +1,98 @@
+[
+  {
+    "downloads": 1399574,
+    "start": "2026-08-08",
+    "end": "2026-09-06",
+    "package": "@convex-dev/workpool"
+  },
+  {
+    "downloads": 1306240,
+    "start": "2026-08-08",
+    "end": "2026-09-06",
+    "package": "@convex-dev/rate-limiter"
+  },
+  {
+    "downloads": 1176484,
+    "start": "2026-08-08",
+    "end": "2026-09-06",
+    "package": "@convex-dev/migrations"
+  },
+  {
+    "downloads": 747362,
+    "start": "2026-08-08",
+    "end": "2026-09-06",
+    "package": "@convex-dev/workflow"
+  },
+  {
+    "downloads": 676053,
+    "start": "2026-08-08",
+    "end": "2026-09-06",
+    "package": "@convex-dev/aggregate"
+  },
+  {
+    "downloads": 529717,
+    "start": "2026-08-08",
+    "end": "2026-09-06",
+    "package": "@convex-dev/agent"
+  },
+  {
+    "downloads": 472815,
+    "start": "2026-08-08",
+    "end": "2026-09-06",
+    "package": "@convex-dev/resend"
+  },
+  {
+    "downloads": 296285,
+    "start": "2026-08-08",
+    "end": "2026-09-06",
+    "package": "@convex-dev/crons"
+  },
+  {
+    "downloads": 268047,
+    "start": "2026-08-08",
+    "end": "2026-09-06",
+    "package": "@convex-dev/r2"
+  },
+  {
+    "downloads": 250382,
+    "start": "2026-08-08",
+    "end": "2026-09-06",
+    "package": "@convex-dev/rag"
+  },
+  {
+    "downloads": 233324,
+    "start": "2026-08-08",
+    "end": "2026-09-06",
+    "package": "@convex-dev/action-cache"
+  },
+  {
+    "downloads": 208788,
+    "start": "2026-08-08",
+    "end": "2026-09-06",
+    "package": "@convex-dev/presence"
+  },
+  {
+    "downloads": 184644,
+    "start": "2026-08-08",
+    "end": "2026-09-06",
+    "package": "@convex-dev/sharded-counter"
+  },
+  {
+    "downloads": 159742,
+    "start": "2026-08-08",
+    "end": "2026-09-06",
+    "package": "@convex-dev/stripe"
+  },
+  {
+    "downloads": 107297,
+    "start": "2026-08-08",
+    "end": "2026-09-06",
+    "package": "@convex-dev/persistent-text-streaming"
+  },
+  {
+    "downloads": 43719,
+    "start": "2026-08-08",
+    "end": "2026-09-06",
+    "package": "@convex-dev/twilio"
+  }
+]

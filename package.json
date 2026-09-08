@@ -1,0 +1,102 @@
+{
+  "name": "convex-telnyx",
+  "version": "0.1.0",
+  "description": "Telnyx messaging, voice, verification and verified webhooks with durable, reactive Convex state.",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "keywords": [
+    "convex",
+    "component",
+    "telnyx",
+    "sms",
+    "mms",
+    "voice",
+    "webhooks",
+    "verification"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "docs",
+    "PUBLISHING.md",
+    "CONTRIBUTING.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/client/index.d.ts",
+      "default": "./dist/client/index.js"
+    },
+    "./convex.config": {
+      "types": "./dist/component/convex.config.d.ts",
+      "default": "./dist/component/convex.config.js"
+    },
+    "./convex.config.js": {
+      "types": "./dist/component/convex.config.d.ts",
+      "default": "./dist/component/convex.config.js"
+    },
+    "./_generated/component.js": {
+      "types": "./dist/component/_generated/component.d.ts"
+    },
+    "./_generated/component": {
+      "types": "./dist/component/_generated/component.d.ts"
+    },
+    "./test": "./src/test.ts",
+    "./package.json": "./package.json",
+    "./sdk": {
+      "types": "./dist/sdk.d.ts",
+      "default": "./dist/sdk.js"
+    }
+  },
+  "types": "./dist/client/index.d.ts",
+  "module": "./dist/client/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "codegen": "convex codegen --component-dir src/component",
+    "dev": "convex dev",
+    "typecheck": "tsc --noEmit && tsc -p example/convex --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "npm run build && npm run typecheck && npm run lint && npm test",
+    "prepack": "npm run build",
+    "prepublishOnly": "npm run check",
+    "test:package": "node scripts/package-smoke.mjs"
+  },
+  "peerDependencies": {
+    "convex": "^1.45.0"
+  },
+  "dependencies": {
+    "@convex-dev/workpool": "^0.4.11",
+    "@noble/curves": "^2.4.0",
+    "convex-helpers": "^0.1.0",
+    "telnyx": "^7.20.0",
+    "@noble/hashes": "^2.0.0"
+  },
+  "devDependencies": {
+    "convex": "^1.45.0",
+    "convex-test": "^0.0.55",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.0",
+    "@types/node": "^22.0.0",
+    "eslint": "^9.39.0",
+    "typescript-eslint": "^8.0.0",
+    "prettier": "^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taylor-labs-co/convex-telnyx.git"
+  },
+  "homepage": "https://github.com/taylor-labs-co/convex-telnyx#readme",
+  "bugs": {
+    "url": "https://github.com/taylor-labs-co/convex-telnyx/issues"
+  }
+}
