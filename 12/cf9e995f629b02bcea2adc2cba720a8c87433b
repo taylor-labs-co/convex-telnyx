@@ -1,0 +1,147 @@
+.github/workflows/ci.yml
+  s_ff22162518192d::t_a6e9b80ea1b251 1-20
+.gitignore
+  s_ff22162518192d::t_9ca772b30cc680 1-8
+.prettierignore
+  s_ff22162518192d::t_0b5bc410c67c93 1-4
+CHANGELOG.md
+  s_ff22162518192d::t_6944c5fdceee76 1-13
+CONTRIBUTING.md
+  s_ff22162518192d::t_910e0b9dd0d293 1-26
+LICENSE
+  s_ff22162518192d::t_ac3d798be69dd1 1-21
+PUBLISHING.md
+  s_ff22162518192d::t_2e77fa57b771f9 1-19
+README.md
+  s_ff22162518192d::t_eee35e08307e4e 1-349
+convex.json
+  s_ff22162518192d::t_9caffd43d8da9f 1
+docs/ARCHITECTURE.md
+  s_ff22162518192d::t_bc7d8366b8ef69 1-52
+docs/CALLING.md
+  s_ff22162518192d::t_02b02e7e238cf6 1-112
+docs/RESEARCH.md
+  s_ff22162518192d::t_77214f1d482e65 1-55
+docs/TWILIO_PARITY.md
+  s_ff22162518192d::t_e683204f4552b0 1-26
+docs/VALIDATION.md
+  s_ff22162518192d::t_6adac08353b1d4 1-30
+docs/npm-downloads.json
+  s_ff22162518192d::t_a4109d78bcc5fe 1-98
+eslint.config.js
+  s_ff22162518192d::t_738788629eee9c 1-6
+example/.env.example
+  s_ff22162518192d::t_73aec9127a8961 1-6
+example/convex/_generated/api.d.ts
+  s_ff22162518192d::t_1af5b8bdcb24dd 1-55
+example/convex/_generated/api.js
+  s_ff22162518192d::t_d93d8a8a1a3185 1-23
+example/convex/_generated/dataModel.d.ts
+  s_ff22162518192d::t_9b2271bcacfec2 1-60
+example/convex/_generated/server.d.ts
+  s_ff22162518192d::t_633693defa43c4 1-163
+example/convex/_generated/server.js
+  s_ff22162518192d::t_a6201ef4783135 1-101
+example/convex/convex.config.ts
+  s_ff22162518192d::t_b1559b34a4d94f 1-6
+example/convex/http.ts
+  s_ff22162518192d::t_e35beed10f3abd 1-10
+example/convex/schema.ts
+  s_ff22162518192d::t_a83d72108d6408 1-9
+example/convex/smoke.ts
+  s_ff22162518192d::t_b109b0033c2d74 1-38
+example/convex/telnyx.ts
+  s_ff22162518192d::t_a4d5d07fd78017 1-160
+example/convex/tsconfig.json
+  s_ff22162518192d::t_e9a498cc6265b8 1-6
+example/sdk.node.ts
+  s_ff22162518192d::t_c5ff2ccd0ae596 1-16
+package-lock.json
+  s_ff22162518192d::t_f4f0ae6d2909e5 1-3330
+package.json
+  s_ff22162518192d::t_dc8a3056daaea1 1-102
+scripts/package-smoke.mjs
+  s_ff22162518192d::t_3eba6bf189d9b4 1-130
+src/callPaths.ts
+  s_ff22162518192d::t_7c86e34549c3f0 1-44
+src/client/index.ts
+  s_ff22162518192d::t_955d76190c3b28 1-655
+src/client/webhooks.ts
+  s_ff22162518192d::t_e31df3e12ec6a0 1-107
+src/component/_generated/api.ts
+  s_ff22162518192d::t_f35c45b8f16c2f 1-71
+src/component/_generated/component.ts
+  s_ff22162518192d::t_0e5e01d0d9b518 1-481
+src/component/_generated/dataModel.ts
+  s_ff22162518192d::t_62b19dcabeff39 1-60
+src/component/_generated/server.ts
+  s_ff22162518192d::t_40dcd8c04c1c4a 1-170
+src/component/callbacks.ts
+  s_ff22162518192d::t_4c2a1ba96b586d 1-91
+src/component/configuration.ts
+  s_ff22162518192d::t_5040f1993c4406 1-93
+src/component/convex.config.ts
+  s_ff22162518192d::t_61d02f0ef6279e 1-9
+src/component/events.ts
+  s_ff22162518192d::t_d3df4a143dd5cb 1-206
+src/component/maintenance.ts
+  s_ff22162518192d::t_893f04d1369107 1-66
+src/component/messageIndex.ts
+  s_ff22162518192d::t_f8733add8e6071 1-73
+src/component/messages.ts
+  s_ff22162518192d::t_22db71a85bfc43 1-99
+src/component/operations.ts
+  s_ff22162518192d::t_98edf7f341f7cc 1-333
+src/component/pool.ts
+  s_ff22162518192d::t_491e330cff4e9a 1-14
+src/component/resources.ts
+  s_ff22162518192d::t_6271aa5f753def 1-125
+src/component/schema.ts
+  s_ff22162518192d::t_1797212044348e 1-132
+src/component/worker.ts
+  s_ff22162518192d::t_646c2aa576def0 1-198
+src/sdk.ts
+  s_ff22162518192d::t_e4be2fad189b38 1-8
+src/shared.ts
+  s_ff22162518192d::t_0c7854445f8952 1-178
+src/test.ts
+  s_ff22162518192d::t_0eb43dc81c51f9 1-14
+src/transport.ts
+  s_ff22162518192d::t_d7cddf533cec9a 1-45
+tests/component.test.ts
+  s_ff22162518192d::t_2a13a49dc54e8d 1-526
+tests/fixtures/handlers.ts
+  s_ff22162518192d::t_d7f05f11cfb940 1-24
+tests/hooks.test.ts
+  s_ff22162518192d::t_df13e2ee0f61bb 1-76
+tests/integration.test.ts
+  s_ff22162518192d::t_5e75f2dfc2708a 1-80
+tests/parity.test.ts
+  s_ff22162518192d::t_fc11519d52b76e 1-602
+tests/sdk-parity.test.ts
+  s_ff22162518192d::t_41defc277e419a 1-73
+tests/webhooks.test.ts
+  s_ff22162518192d::t_760a1e6eb75829 1-98
+tsconfig.build.json
+  s_ff22162518192d::t_166fe60d40b533 1-6
+tsconfig.json
+  s_ff22162518192d::t_5a1d3084abdfaa 1-19
+vitest.config.ts
+  s_ff22162518192d::t_de220219d4ba26 1-15
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "12cf9e995f629b02bcea2adc2cba720a8c87433b",
+  "prompts": {},
+  "sessions": {
+    "s_ff22162518192d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a07ead-2003-78a3-84d3-d815490cc0b0",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Evan Taylor <eltaylor1104@gmail.com>"
+    }
+  }
+}
