@@ -9,6 +9,8 @@
  */
 
 import type * as callbacks from "../callbacks.js";
+import type * as lifecycle from "../lifecycle.js";
+import type * as lifecycleWorker from "../lifecycleWorker.js";
 import type * as configuration from "../configuration.js";
 import type * as events from "../events.js";
 import type * as maintenance from "../maintenance.js";
@@ -28,6 +30,8 @@ import { anyApi, componentsGeneric } from "convex/server";
 
 const fullApi: ApiFromModules<{
   callbacks: typeof callbacks;
+  lifecycle: typeof lifecycle;
+  lifecycleWorker: typeof lifecycleWorker;
   configuration: typeof configuration;
   events: typeof events;
   maintenance: typeof maintenance;

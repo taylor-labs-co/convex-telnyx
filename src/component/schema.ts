@@ -1,5 +1,6 @@
 import { defineSchema, defineTable } from "convex/server";
 import { v } from "convex/values";
+import { lifecycleFields, ownedFields } from "../lifecycle.js";
 export const kind = v.union(
   v.literal("message"),
   v.literal("call"),
@@ -90,6 +91,20 @@ export const eventDoc = v.object({
   ...eventFields,
 });
 export default defineSchema({
+  lifecycleOperations: defineTable(lifecycleFields)
+    .index("by_scope_key", ["scope", "key"])
+    .index("by_scope", ["scope"]),
+  ownedResources: defineTable(ownedFields)
+    .index("by_phone", ["phoneNumber"])
+    .index("by_kind_id", ["kind", "externalId"])
+    .index("by_scope", ["scope"])
+    .index("by_profile", ["messagingProfileId"]),
+  lifecycleLocks: defineTable({
+    key: v.string(),
+    operationId: v.id("lifecycleOperations"),
+  })
+    .index("by_key", ["key"])
+    .index("by_operation", ["operationId"]),
   messageContacts: defineTable({
     scope: v.string(),
     resourceId: v.id("resources"),

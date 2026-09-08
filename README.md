@@ -6,6 +6,7 @@ Send an SMS or MMS, place a call, control it, and observe the result from a Conv
 
 ## Features
 
+- **Tenant lifecycle:** durable, ownership-checked profile creation, number acquisition, 10DLC assignment, confirmed cleanup, and recoverable tenant-binding hooks. See [lifecycle orchestration](docs/LIFECYCLE.md) for recovery and managed-account boundaries.
 - **Messaging:** SMS/MMS, group MMS, default senders, automatic status-webhook URLs, provider scheduling/cancellation, immediate action-based sending, and retryable per-send callbacks.
 - **Voice:** dialing and 41 typed commands, including answer, hangup, bridge, transfer, speech, playback, DTMF, recording, transcription, streaming, queues, SIPREC, AI assistants and conversation relay.
 - **Verification:** SMS, voice call, flash call and WhatsApp challenges; check a code without storing it in the component.

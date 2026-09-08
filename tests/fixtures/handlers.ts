@@ -1,6 +1,21 @@
 import { internalMutationGeneric } from "convex/server";
 import { v } from "convex/values";
 import { webhookEventValidator } from "../../src/shared.js";
+import { lifecycleSnapshot } from "../../src/lifecycle.js";
+export const lifecycleFinished = internalMutationGeneric({
+  args: {
+    scope: v.string(),
+    operationId: v.string(),
+    snapshot: lifecycleSnapshot,
+  },
+  returns: v.null(),
+  handler: async (ctx, { operationId }) => {
+    await ctx.db.insert("hits", { eventId: operationId });
+    const toggle = await ctx.db.query("toggles").first();
+    if (toggle?.fail) throw new Error("intentional lifecycle callback failure");
+    return null;
+  },
+});
 export const processEvent = internalMutationGeneric({
   args: { scope: v.string(), event: webhookEventValidator },
   returns: v.null(),
