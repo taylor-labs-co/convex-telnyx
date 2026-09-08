@@ -1,6 +1,6 @@
 {
   "name": "convex-telnyx",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Telnyx messaging, voice, verification and verified webhooks with durable, reactive Convex state.",
   "license": "MIT",
   "type": "module",
