@@ -9,6 +9,8 @@
  */
 
 import type { FunctionReference } from "convex/server";
+import type { Infer } from "convex/values";
+import type { lifecycleRequest, lifecycleDoc, ownedDoc } from "../../lifecycle.js";
 
 /**
  * A utility for referencing a Convex component's exposed API.
@@ -23,6 +25,14 @@ import type { FunctionReference } from "convex/server";
  */
 export type ComponentApi<Name extends string | undefined = string | undefined> =
   {
+    lifecycle: {
+      list: FunctionReference<"query", "internal", { scope: string; paginationOpts: import("convex/server").PaginationOptions }, { page: Array<Infer<typeof lifecycleDoc>>; isDone: boolean; continueCursor: string }, Name>;
+      enqueue: FunctionReference<"mutation", "internal", { scope: string; key: string; request: Infer<typeof lifecycleRequest>; callback?: string }, string, Name>;
+      get: FunctionReference<"query", "internal", { scope: string; id: string }, Infer<typeof lifecycleDoc> | null, Name>;
+      resources: FunctionReference<"query", "internal", { scope: string }, Array<Infer<typeof ownedDoc>>, Name>;
+      reconcile: FunctionReference<"mutation", "internal", { scope: string; id: string }, boolean, Name>;
+      redriveCallback: FunctionReference<"mutation", "internal", { scope: string; id: string }, boolean, Name>;
+    };
     callbacks: {
       redrive: FunctionReference<
         "mutation",

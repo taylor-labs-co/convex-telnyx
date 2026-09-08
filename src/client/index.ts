@@ -1,4 +1,16 @@
 import type TelnyxSDK from "telnyx";
+import type { Infer } from "convex/values";
+import { lifecycleSnapshot, lifecycleRequest } from "../lifecycle.js";
+export { lifecycleSnapshot as lifecycleSnapshotValidator } from "../lifecycle.js";
+export { lookupBrand, lookupCampaign } from "../lifecycleProvider.js";
+export type LifecycleRequest = Infer<typeof lifecycleRequest>;
+export type LifecycleSnapshot = Infer<typeof lifecycleSnapshot>;
+export type LifecycleHandler = FunctionReference<
+  "mutation",
+  "internal",
+  { scope: string; operationId: string; snapshot: LifecycleSnapshot },
+  unknown
+>;
 import { requestTelnyx } from "../transport.js";
 import {
   createFunctionHandle,
@@ -109,6 +121,35 @@ export interface WebhookOptions {
 }
 /** Durable Telnyx operations and reactive state. Authenticate and derive scope in your app. */
 export class Telnyx {
+  readonly lifecycle = {
+    list: (ctx: QueryCtx, scope: string, paginationOpts: PaginationOptions) =>
+      ctx.runQuery(this.component.lifecycle.list, { scope, paginationOpts }),
+    enqueue: async (
+      ctx: MutationCtx,
+      request: LifecycleRequest,
+      options: {
+        scope: string;
+        idempotencyKey: string;
+        callback?: LifecycleHandler;
+      },
+    ) =>
+      ctx.runMutation(this.component.lifecycle.enqueue, {
+        scope: options.scope,
+        key: options.idempotencyKey,
+        request,
+        ...(options.callback
+          ? { callback: await createFunctionHandle(options.callback) }
+          : {}),
+      }),
+    get: (ctx: QueryCtx, scope: string, id: string) =>
+      ctx.runQuery(this.component.lifecycle.get, { scope, id }),
+    resources: (ctx: QueryCtx, scope: string) =>
+      ctx.runQuery(this.component.lifecycle.resources, { scope }),
+    reconcile: (ctx: MutationCtx, scope: string, id: string) =>
+      ctx.runMutation(this.component.lifecycle.reconcile, { scope, id }),
+    redriveCallback: (ctx: MutationCtx, scope: string, id: string) =>
+      ctx.runMutation(this.component.lifecycle.redriveCallback, { scope, id }),
+  };
   constructor(
     public readonly component: ComponentApi,
     private readonly options: TelnyxOptions = {},
