@@ -1,19 +1,35 @@
-# Publishing convex-telnyx
+# Publishing
 
-The package is prepared as version 0.1.0. Preparation does not publish it. The unscoped npm name returned 404 when checked on September 7, 2026; this is not a reservation and must be rechecked at release time.
+## First release
 
-## Release checklist
+The package name is `convex-telnyx`. Authenticate with `npm login`, then run `npm publish --access public` after the checks pass. npm may require security-key or browser authorization. Never commit credentials.
 
-1. Review README, license, changelog and the validation record. Repository, homepage and issue links point to `taylor-labs-co/convex-telnyx`. Add author metadata if desired.
-2. Run `npm ci --ignore-scripts`, `npm run check`, `npm run format:check`, and `npm run test:package`.
-3. Run `npm pack --dry-run` and inspect the file list. Environment files, local deployment state, test fixtures and node_modules must not be included.
-4. For provider verification, configure a dedicated Telnyx test account/number and exercise real outbound/inbound messaging, a call and its webhook lifecycle, and a verification challenge. Unit tests mock provider calls; they do not establish carrier delivery or account eligibility. These operations can incur provider charges.
-5. Log into the npm account that should own the name: `npm login`. Verify with `npm whoami` and recheck the name with `npm view convex-telnyx`.
-6. Publish intentionally: `npm publish --access public`. `prepublishOnly` runs the build, type checks, lint and tests.
-7. Tag the published version and push it to your chosen repository. Do not tag or push to an invented remote.
+## Automatic releases
 
-For an alpha release, change the version to `0.1.0-alpha.0` and publish with `--tag alpha`. Use npm trusted publishing and provenance when your actual repository and publishing workflow are configured; this project does not contain tokens or an automatic publishing workflow.
+`.github/workflows/publish.yml` runs when a GitHub release is published. It checks the release tag against `package.json`, installs dependencies, builds, typechecks, lints, runs the tests, checks formatting, and publishes with provenance. Stable releases use `latest`; GitHub prereleases use `next`.
+
+Configure the package's npm trusted publisher once:
+
+- Provider: GitHub Actions
+- Organization: `taylor-labs-co`
+- Repository: `convex-telnyx`
+- Workflow filename: `publish.yml`
+- Environment: leave empty
+- Allowed action: direct `npm publish`
+
+This workflow uses short-lived OIDC authentication; no npm token needs to be stored in GitHub. Configuration on npm is required before the workflow can publish.
+
+For subsequent releases:
+
+1. Update the package version and lockfile, changelog and validation record.
+2. Push the changes after CI passes.
+3. Create a GitHub release with the matching tag, such as `v0.1.1` for package version `0.1.1`.
+4. Verify the Publish to npm workflow succeeds and the version appears on npm.
+
+Do not create a release for a version already published manually: npm versions are immutable. Tag the initial manual release without publishing a GitHub release, or let a later release be the first automated publish.
 
 ## Convex directory
 
-After npm publication, submit the package through the [Convex Components directory](https://www.convex.dev/components). Prepare the npm URL, repository, concise feature description and a demo link. A backend example is included locally; no hosted demo or directory submission has been created.
+After npm publication, submit through the [Convex Components directory](https://www.convex.dev/components). Include the npm URL, repository, feature description and a demo link. A backend example is included; a hosted demo and directory submission remain separate tasks.
+
+See [npm trusted publishing documentation](https://docs.npmjs.com/trusted-publishers/) for account configuration details.
